@@ -1,11 +1,13 @@
 %p#notice= notice
-%h2.todo_list_title= @todo_list.title
-%p.todo_list_sub_title= @todo_list.description
-#todo_items_wrapper
-  = render @todo_list.todo_items
-  #form
+.card
+  .card-body
+    %h2= @todo_list.title
+    %p= @todo_list.description
+
+    = render @todo_list.todo_items
     = render "todo_items/form"
-.links
-  = link_to 'Edit', edit_todo_list_path(@todo_list)
-  = link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" }
-  = link_to 'Back', todo_lists_path
+    .d-flex.justify-content-center.mt-3
+      .links
+        = link_to 'Edit', edit_todo_list_path(@todo_list), class: "mr-2"
+        = link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" }, class: "mr-2"
+        = link_to 'Back', todo_lists_path, class: "mr-2"

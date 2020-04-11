@@ -1,3 +1,5 @@
-= form_for([@todo_list, @todo_list.todo_items.build]) do |f|
-  = f.text_field :content, placeholder: "New Todo"
-  = f.submit
+.form
+  = form_for([@todo_list, @todo_list.todo_items.build]) do |f|
+    .form-group.d-flex
+      = f.text_field :content, placeholder: "New Todo", class: "form-control mr-2"
+      = f.submit content: 'Create todo', class: 'btn btn-primary'
