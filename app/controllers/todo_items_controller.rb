@@ -7,12 +7,10 @@ class TodoItemsController < ApplicationController
     redirect_to @todo_list
   end
 
-  # def edit
-  #   @todo_item = @todo_list.todo_items.create(todo_item_params)
-  #   redirect_to @todo_list
-  # end
-
-
+  def update
+    @todo_item.update_attribute(:content, params[:content])
+    redirect_to @todo_list, notice: "Todo item completed"
+  end
 
   def destroy
     @todo_item = @todo_list.todo_items.find(params[:id])
