@@ -13,6 +13,71 @@
  *= require_self
  */
 
+@import 'bootstrap/dist/css/bootstrap';
+
+$dark_text: #565454;
+
+body {
+  color: $dark_text;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Quicksand;
+}
+
+.back-link {
+  text-decoration: none !important;
+  font-size: 20px;
+  i {
+    font-size: 16px;
+  }
+}
+
+//a.link-gray {
+//  color: gray;
+//}
+
+.app {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  position: relative;
+}
+
+.alert {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-right: 15px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1340px;
+  }
+}
+
 .todo-item-edit  {
   display: none;
 }
+
+.lists {
+  &__container {
+    @extend .container;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__item-card {
+    text-decoration: none;
+    h4, p {
+      color: $dark_text;
+    }
+    &:hover {
+      box-shadow: 0px 1px 10px #3EADCF4D;
+      text-decoration: none;
+    }
+  }
+}
+

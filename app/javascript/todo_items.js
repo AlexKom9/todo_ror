@@ -14,6 +14,9 @@ function todItemToggleEditListener() {
     var editForm = $(".js-todo-item-edit[data-todo-item-id=" + itemId + "]")
     editForm.toggle()
   })
+  setTimeout(function(){
+    $('.js-alert').hide()
+  }, 3000)
 }
 
 $(document).on("turbolinks:load", todItemToggleEditListener)
