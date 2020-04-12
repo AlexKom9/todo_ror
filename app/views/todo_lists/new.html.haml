@@ -1,5 +1,6 @@
-%h1.todo_list_title New Todo List
-.forms
-  = render 'form', todo_list: @todo_list
-.links
-  = link_to 'Back', todo_lists_path
+= render partial: 'back_link', locals: { link: todo_lists_path }
+.card
+  .card-body
+    %h2.todo_list_title New Todo List
+    .form
+      = render 'form', todo_list: @todo_list

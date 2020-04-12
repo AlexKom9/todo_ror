@@ -1,9 +1,9 @@
 .d-flex.mb-2
   .d-flex.align-items-center.mr-4
-    = link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do
-      - if todo_item.completed?
-        %i.fa.fa-check{:style => "opacity: 0.4;"}
-      - else
+    - if todo_item.completed?
+      %i.fa.fa-check{:style => "opacity: 0.4;"}
+    - else
+      = link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do
         %i.fa.fa-circle-thin
 
   .flex-grow-1.js-item-content{ 'data-todo-item-id': todo_item.id }
@@ -22,7 +22,7 @@
 
   - if todo_item.completed?
     .d-flex.align-items-center.mr-4
-      = link_to reopen_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch, class: 'text-secondary' do
+      = link_to reopen_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch, class: 'text-primary', 'data-toggle': "tooltip", 'data-placement': "top", title: "Reopen task" do
         %i.fa.fa-reply
   %button.btn.btn-outline-secondary.mr-4.js-todo-item-edit-btn{ 'data-todo-item-id': todo_item.id, 'data-active-text': 'Cancel', 'data-unactive-text': 'Edit', 'data-is-active': false }
     Edit

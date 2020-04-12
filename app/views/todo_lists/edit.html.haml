@@ -1,5 +1,6 @@
-%h1.todo_list_title Editing Todo List
-.forms
-  = render 'form', todo_list: @todo_list
-.links
-  = link_to 'Cancel', todo_lists_path
+= render partial: 'back_link', locals: { link: @todo_list }
+.card
+  .card-body
+    %h2.todo_list_title Edit Todo List
+    .form
+      = render 'form', todo_list: @todo_list

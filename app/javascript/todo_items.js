@@ -13,10 +13,8 @@ function todItemToggleEditListener() {
     }
     var editForm = $(".js-todo-item-edit[data-todo-item-id=" + itemId + "]")
     editForm.toggle()
+    editForm.find('input[name=content]').focus()
   })
-  setTimeout(function(){
-    $('.js-alert').hide()
-  }, 3000)
 }
 
 $(document).on("turbolinks:load", todItemToggleEditListener)
