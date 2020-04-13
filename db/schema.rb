@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_03_211509) do
+ActiveRecord::Schema.define(version: 2020_04_12_171542) do
 
   create_table "todo_items", force: :cascade do |t|
     t.string "content"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 2020_04_03_211509) do
   create_table "todo_lists", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
