@@ -11,12 +11,14 @@ require("jquery")
 require("bootstrap")
 require("todo_items")
 
-setTimeout(function(){
-  $('.js-alert').hide()
-}, 3000)
+$(document).on("turbolinks:load", function(){
+  setTimeout(function(){
+    $('.js-alert').hide()
+  }, 3000)
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 })
 
 // Uncomment to copy all static images under ../images to the output folder and reference

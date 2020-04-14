@@ -9,26 +9,26 @@ class TodoItemsController < ApplicationController
 
   def update
     @todo_item.update_attribute(:content, params[:content])
-    redirect_to @todo_list, notice: "Todo item was updated"
+    redirect_to @todo_list, notice: "Todo item was updated."
   end
 
   def destroy
     @todo_item = @todo_list.todo_items.find(params[:id])
     if @todo_item.destroy
-      redirect_to @todo_list, notice: "Todo List item was deleted."
+      redirect_to @todo_list, notice: "Todo item was deleted."
     else
-      redirect_to @todo_list, notice: "Todo List item could not be deleted."
+      redirect_to @todo_list, notice: "Todo item could not be deleted."
     end
   end
 
   def complete
     @todo_item.update_attribute(:completed_at, Time.now)
-    redirect_to @todo_list, notice: "Todo item completed"
+    redirect_to @todo_list, notice: "Todo item was marked as completed."
   end
 
   def reopen
     @todo_item.update_attribute(:completed_at, nil)
-    redirect_to @todo_list, notice: "Todo item was reopened"
+    redirect_to @todo_list, notice: "Todo item was reopened."
   end
 
   private
